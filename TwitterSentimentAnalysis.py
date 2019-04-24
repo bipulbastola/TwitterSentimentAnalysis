@@ -10,11 +10,13 @@ twitter_api = twitter.Api(consumer_key='56YkT1Dw8FzWZgveLffz2eP1p',
 print(twitter_api.VerifyCredentials())
 
 
-# ------------------------------------------------------------------------
+"""Building Test Set Function
+Tweets are downloaded  for the search term 
+"""
 
 def buildTestSet(search_keyword):
     try:
-        tweets_fetched = twitter_api.GetSearch(search_keyword, count=180)
+        tweets_fetched = twitter_api.GetSearch(search_keyword, count=100)
 
         print("Fetched " + str(len(tweets_fetched)) + " tweets for the term " + search_keyword)
 
@@ -24,7 +26,8 @@ def buildTestSet(search_keyword):
         return None
 
 
-# ------------------------------------------------------------------------
+# Testing our Function
+"""Showing four among all downloaded tweets"""
 
 search_term = input("Enter a search keyword: ")
 testDataSet = buildTestSet(search_term)
